@@ -15,6 +15,15 @@ public class ModelItem {
         this.cantidad = cantidad;
     }
 
+    public ModelItem(String title, String detail, String imagen, String consejos, int cantidad) {
+        this.title = title;
+        this.detail = detail;
+        this.consejos = consejos;
+        this.imagen = Integer.parseInt(imagen);
+        this.cantidad = cantidad;
+
+    }
+
     public String getTitle() {
         return title;
     }

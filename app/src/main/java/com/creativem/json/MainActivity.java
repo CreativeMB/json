@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ModelItem selectedModelItem;
     private JSONObject jsonSeleccionado;
-
+    private ModelItem selectedItem;
+    Button ver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         itemAdapter = new ItemAdapter(listItem, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(itemAdapter);
+        ver = findViewById(R.id.btnVerJSON);
+        ver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirActividadVerJSON();
+            }
+        });
 
         jsonRead();
 
@@ -62,8 +71,69 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void guardarItemSeleccionado(){
 
+        SharedPreferences prefs = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putString("titulo", selectedModelItem.getTitle());
+        int imageId = selectedItem.getImagen();
+        String imageIdString = String.valueOf(imageId);
+        editor.putString("imagen", imageIdString);
+        editor.putString("descripcion", selectedModelItem.getDetail());
+        editor.putString("consejos", selectedModelItem.getConsejos());
+
+        editor.apply();
+
+    }
+    public void irAVerItem(){
+
+        Intent intent = new Intent(MainActivity.this, VerJSON.class);
+        startActivity(intent);
+
+    }
     private void guardarJSON() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
+
+        // Recupera la lista actual de objetos JSON almacenados en las preferencias compartidas
+        String jsonString = sharedPreferences.getString("estadisticas", "");
+        JSONArray jsonArray;
+
+        try {
+            // Si ya hay datos guardados, convierte la cadena JSON en un JSONArray existente
+            if (!jsonString.isEmpty()) {
+                jsonArray = new JSONArray(jsonString);
+            } else {
+                // Si no hay datos guardados, crea un nuevo JSONArray
+                jsonArray = new JSONArray();
+            }
+
+            if (selectedModelItem != null) {
+                // Crea un nuevo objeto JSON para el elemento seleccionado
+                JSONObject itemJSON = new JSONObject();
+                itemJSON.put("title", selectedModelItem.getTitle());
+                itemJSON.put("detail", selectedModelItem.getDetail());
+                itemJSON.put("consejo", selectedModelItem.getConsejos());
+                itemJSON.put("imagen", selectedModelItem.getImagen());
+                itemJSON.put("cantidad", selectedModelItem.getCantidad());
+
+                // Agrega el objeto JSON a la lista
+                jsonArray.put(itemJSON);
+            } else {
+                Toast.makeText(MainActivity.this, "Ningún elemento seleccionado", Toast.LENGTH_SHORT).show();
+            }
+
+            // Guarda la lista actualizada en las preferencias compartidas
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("estadisticas", jsonArray.toString());
+            editor.apply();
+            Log.d("JSON", jsonArray.toString());
+            // Puedes realizar otras acciones necesarias
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+   /* private void guardarJSON() {
         if (selectedModelItem != null) {
             try {
                 jsonSeleccionado.put("title", selectedModelItem.getTitle());
@@ -87,7 +157,17 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
             Log.d("JSON", jsonString);
             // Aquí puedes realizar otras acciones necesarias
-        }
+        }*/
+    }
+    private void abrirActividadVerJSON(){
+
+        SharedPreferences prefs = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
+        String jsonGuardado = prefs.getString("estadisticas", null);
+
+        Intent intent = new Intent(MainActivity.this, VerJSON.class);
+        intent.putExtra("json", jsonGuardado);
+        startActivity(intent);
+
     }
     private void jsonRead() {
         try {
@@ -132,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         return builder.toString();
     }
 
-    private class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
+    class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         private final ArrayList<ModelItem> modelItem;
         private final Context context;
 
