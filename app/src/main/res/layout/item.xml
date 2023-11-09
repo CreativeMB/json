@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Item"
+    android:padding="3dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="25dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imagenItem"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/hinojo"
+                android:scaleType="fitCenter"/>
+            <TextView
+                android:id="@+id/titleItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/app_name"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp" />
+
+
+            <TextView
+                android:id="@+id/detailItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="@string/app_detail"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/consejosItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="@string/app_consejos"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="Cantidad de plantas"
+                    android:textStyle="bold"/>
+
+                <Space
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/editTextText"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="12" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>

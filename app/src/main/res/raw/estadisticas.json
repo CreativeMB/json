@@ -1,0 +1,18 @@
+[
+
+   {
+      "imagen": "menta",
+      "title": "Menta",
+      "detail": "Aromáticas ",
+      "consejo": "Siembra: Planta esquejes o raíces en suelo húmedo y fértil. Ten en cuenta que la menta puede propagarse rápidamente, por lo que es recomendable plantarla en macetas. \n\nRiego: Mantén el suelo constantemente húmedo. \n\nAbono: Alimenta con un fertilizante equilibrado durante la temporada de crecimiento.",
+      "cantidad": "12"
+   },
+   {
+      "imagen": "brocoli",
+      "title": "Brócoli",
+      "detail": "Plantas de raíz",
+      "consejo": "Siembra: Planta las plántulas de brócoli en primavera u otoño en un suelo rico en materia orgánica y bien drenado. Espacia adecuadamente.\n\n Riego: Mantén el sustrato uniformemente húmedo, especialmente durante el crecimiento de las cabezas.\n\n Cuidado: Recoge las cabezas de brócoli antes de que las flores se abran por completo para obtener los mejores resultados. Puedes seguir cosechando brotes laterales después de la primera cosecha.\n\n Abono: Fertiliza con un abono equilibrado al momento de la siembra y nuevamente después de unas 4-6 semanas.",
+      "cantidad": "15"
+   }
+
+]

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">json</string>
+    <string name="app_detail">Texto de nuesta app para poder visualisar loas caracteristicas </string>
+    <string name="app_consejos">mis consejos</string>
+</resources>

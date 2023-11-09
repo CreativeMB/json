@@ -1,0 +1,34 @@
+[
+
+   {
+      "imagen": "menta",
+      "title": "Menta",
+      "detail": "Aromáticas ",
+      "consejo": "Siembra: Planta esquejes o raíces en suelo húmedo y fértil. Ten en cuenta que la menta puede propagarse rápidamente, por lo que es recomendable plantarla en macetas. \n\nRiego: Mantén el suelo constantemente húmedo. \n\nAbono: Alimenta con un fertilizante equilibrado durante la temporada de crecimiento."
+   },
+   {
+      "imagen": "brocoli",
+      "title": "Brócoli",
+      "detail": "Plantas de raíz",
+      "consejo": "Siembra: Planta las plántulas de brócoli en primavera u otoño en un suelo rico en materia orgánica y bien drenado. Espacia adecuadamente.\n\n Riego: Mantén el sustrato uniformemente húmedo, especialmente durante el crecimiento de las cabezas.\n\n Cuidado: Recoge las cabezas de brócoli antes de que las flores se abran por completo para obtener los mejores resultados. Puedes seguir cosechando brotes laterales después de la primera cosecha.\n\n Abono: Fertiliza con un abono equilibrado al momento de la siembra y nuevamente después de unas 4-6 semanas."
+   },
+   {
+      "imagen": "cebollino",
+      "title": "Cebollino",
+      "detail": "Aromáticas",
+      "consejo": "Siembra: Siembra las semillas directamente en el suelo o transplanta plántulas. Espacia adecuadamente. \n\nRiego: Mantén el sustrato uniformemente húmedo.\n\n Abono: Aplica compost o abono orgánico regularmente."
+   },
+   {
+      "imagen": "cilantro",
+      "title": "Espinacas",
+      "detail": "Hortalizas de hoja",
+      "consejo": "Siembra: Planta semillas o división de bulbos en suelo bien drenado. \n\nRiego: Mantén el suelo húmedo, pero no empapado. \n\nAbono: Utiliza un fertilizante equilibrado y aplícalo durante el crecimiento activo."
+   },
+   {
+      "imagen": "eneldo",
+      "title": "Eneldo",
+      "detail": "Aromáticas",
+      "consejo": "Siembra: Planta semillas o división de bulbos en suelo bien drenado. \n\nRiego: Mantén el suelo uniformemente húmedo. \n\nAbono: Utiliza un fertilizante equilibrado y riégalo con moderación."
+   }
+
+]
